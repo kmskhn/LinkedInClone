@@ -1,0 +1,16 @@
+.actionIcon {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  color: gray;
+
+  h4 {
+    margin-left: 5px;
+  }
+
+  &:hover{
+      background-color: whitesmoke;
+  }
+}

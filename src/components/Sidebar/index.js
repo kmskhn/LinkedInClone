@@ -35,7 +35,7 @@ function Sidebar() {
       </div>
 
       <div className={classes.sidebar__bottom}>
-        <p>Recent</p>
+        <p className={classes.sidebar__recent}>Recent</p>
         {recentItem("Design")}
         {recentItem("Development")}
         {recentItem("React Js")}

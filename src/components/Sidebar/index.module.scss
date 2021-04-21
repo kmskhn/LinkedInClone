@@ -6,6 +6,7 @@
   border-radius: 20px;
   text-align: center;
 }
+
 .sidebar__avatar {
   margin-bottom: 10px;
 }
@@ -64,6 +65,11 @@
   border: solid 1px gray;
   border-radius: 10px;
   background-color: white;
+
+  .sidebar__recent {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
 }
 
 .sidebar__recentitem {
@@ -77,11 +83,13 @@
   cursor: pointer;
   margin-bottom: 5px;
   padding: 5px;
+
   &:hover {
     color: black;
     background-color: whitesmoke;
     border-radius: 10px;
   }
+
   .sidebar__hash {
     margin-right: 10px;
     margin-left: 5px;
