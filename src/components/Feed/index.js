@@ -12,14 +12,14 @@ import { db } from "../../firebase";
 import firebase from 'firebase';
 
 function Feed() {
-  const [posts, setposts] = useState([]);
+  const [posts, setPosts] = useState([]);
   const [input, setInput] = useState('');
 
   useEffect(() => {
     db.collection("posts")
       .orderBy("timestamp", "desc")
       .onSnapshot((snapshot) =>
-        setposts(snapshot.docs.map((doc) => (
+        setPosts(snapshot.docs.map((doc) => (
           {
             id: doc.id,
             data: doc.data()
