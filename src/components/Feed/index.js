@@ -10,10 +10,14 @@ import ActionIcon from "../ActionIcon";
 import Post from "../Post";
 import { db } from "../../firebase";
 import firebase from 'firebase';
+import { useSelector } from "react-redux";
+import { selectUser } from "../../features/userSlice";
 
 function Feed() {
   const [posts, setPosts] = useState([]);
   const [input, setInput] = useState('');
+
+  const user = useSelector(selectUser);
 
   useEffect(() => {
     db.collection("posts")
@@ -39,10 +43,10 @@ function Feed() {
     e.preventDefault();
     console.log('form submitted')
     db.collection('posts').add({
-      name: "Kalim",
-      description: "this is a test",
+      name: user.displayName,
+      description: user.email,
       message: input,
-      photoUrl: "",
+      photoUrl: user.photoURL ?? "",
       timestamp: firebase.firestore.FieldValue.serverTimestamp()
     })
 
